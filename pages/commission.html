@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказать работу | Высоцкая Добрава</title>
+    <meta name="description" content="Закажите индивидуальную работу у художницы Высоцкой Добравы. Портреты, пейзажи, абстракции на заказ.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Заказать работу | Высоцкая Добрава">
+    <meta property="og:description" content="Форма заказа индивидуальной работы">
+    <meta property="og:type" content="website">
+    
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/analytics-panel.css">
+    
+    <!-- Дополнительные стили для формы -->
+    <style>
+        .commission-page {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .page-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+        
+        .commission-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .form-section {
+            border: none;
+            padding: 0;
+            margin: 0 0 30px;
+        }
+        
+        .form-section legend {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding: 0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #C4704D;
+            box-shadow: 0 0 0 3px rgba(196, 112, 77, 0.1);
+        }
+        
+        .form-group input.input--error,
+        .form-group select.input--error,
+        .form-group textarea.input--error {
+            border-color: #e74c3c;
+            background-color: #fdf2f2;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-error {
+            display: none;
+            color: #e74c3c;
+            font-size: 13px;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+        
+        .form-error.visible {
+            display: block;
+            animation: shake 0.3s ease;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-4px); }
+            75% { transform: translateX(4px); }
+        }
+        
+        .form-hint {
+            display: block;
+            color: #7f8c8d;
+            font-size: 13px;
+            margin-top: 6px;
+        }
+        
+        .form-consent {
+            margin: 25px 0;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .checkbox-label input[type="checkbox"] {
+            width: auto;
+            margin-top: 3px;
+        }
+        
+        .form-success {
+            text-align: center;
+            padding: 40px 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            animation: fadeIn 0.4s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .form-success .success-icon {
+            font-size: 48px;
+            color: #27ae60;
+            margin-bottom: 16px;
+        }
+        
+        .form-success h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .form-success p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .commission-form {
+                padding: 30px 20px;
+            }
+            
+            .page-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="../index.html" class="logo">
+                <span class="logo__text">Высоцкая Добрава</span>
+            </a>
+            
+            <nav class="nav" id="mainNav">
+                <ul class="nav__list nav__list--desktop">
+                    <li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="portfolio.html" class="nav__link">Портфолио</a></li>
+                    <li class="nav__item"><a href="../index.html#about" class="nav__link">Обо мне</a></li>
+                    <li class="nav__item"><a href="commission.html" class="nav__link nav__link--active">Заказать</a></li>
+                    <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
+                </ul>
+                
+                <button class="nav__burger" id="navBurger" aria-label="Открыть меню" aria-expanded="false">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+                
+                <div class="nav__mobile" id="navMobile" hidden>
+                    <ul class="nav__list nav__list--mobile">
+                        <li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li>
+                        <li class="nav__item"><a href="portfolio.html" class="nav__link">Портфолио</a></li>
+                        <li class="nav__item"><a href="../index.html#about" class="nav__link">Обо мне</a></li>
+                        <li class="nav__item"><a href="commission.html" class="nav__link">Заказать</a></li>
+                        <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="commission-page">
+        <div class="container">
+            <h1 class="page-title">Заказать индивидуальную работу</h1>
+            <p class="page-subtitle">Заполните форму, и я свяжусь с вами в течение 2 рабочих дней</p>
+
+            <form class="commission-form" id="commissionForm" novalidate>
+                <!-- Контактные данные -->
+                <fieldset class="form-section">
+                    <legend>Ваши данные</legend>
+                    <div class="form-group">
+                        <label for="name">Имя *</label>
+                        <input type="text" id="name" name="name" required minlength="2" placeholder="Как к вам обращаться?">
+                        <span class="form-error" id="nameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="example@email.com">
+                        <span class="form-error" id="emailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон (опционально)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__">
+                    </div>
+                </fieldset>
+
+                <!-- Детали заказа -->
+                <fieldset class="form-section">
+                    <legend>О проекте</legend>
+                    <div class="form-group">
+                        <label for="type">Тип работы *</label>
+                        <select id="type" name="type" required>
+                            <option value="">Выберите тип</option>
+                            <option value="portrait">Портрет по фото</option>
+                            <option value="landscape">Пейзаж</option>
+                            <option value="abstract">Абстракция</option>
+                            <option value="custom">Другое</option>
+                        </select>
+                        <span class="form-error" id="typeError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="size">Желаемый размер</label>
+                        <select id="size" name="size">
+                            <option value="">Не определено</option>
+                            <option value="small">До 30×40 см</option>
+                            <option value="medium">30×40 — 50×70 см</option>
+                            <option value="large">Более 50×70 см</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Описание идеи *</label>
+                        <textarea id="description" name="description" required rows="4" placeholder="Расскажите, что вы хотите увидеть в работе..."></textarea>
+                        <span class="form-error" id="descError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="files">Прикрепить референсы (до 3 файлов)</label>
+                        <input type="file" id="files" name="files" multiple accept="image/*">
+                        <small class="form-hint">Макс. размер файла: 5 МБ</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Примерный бюджет</label>
+                        <input type="text" id="budget" name="budget" placeholder="Например: 10 000 - 20 000 ₽">
+                    </div>
+                </fieldset>
+
+                <!-- Согласие и отправка -->
+                <div class="form-consent">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="consent" required>
+                        <span>Я согласен(на) на обработку персональных данных *</span>
+                    </label>
+                    <span class="form-error" id="consentError"></span>
+                </div>
+
+                <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
+            </form>
+
+            <!-- Сообщение об успехе (скрыто по умолчанию) -->
+            <div class="form-success" id="successMessage" hidden>
+                <div class="success-icon">✓</div>
+                <h3>Заявка отправлена!</h3>
+                <p>Спасибо за доверие. Я изучу ваш запрос и отвечу в течение 2 рабочих дней.</p>
+                <a href="../index.html" class="btn btn--outline">Вернуться на главную</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <span class="footer__logo">Высоцкая Добрава</span>
+                    <p class="footer__desc">Художница • Живопись • Комиссии</p>
+                </div>
+                <nav class="footer__nav">
+                    <a href="portfolio.html">Портфолио</a>
+                    <a href="commission.html">Заказать</a>
+                    <a href="contacts.html">Контакты</a>
+                </nav>
+                <div class="footer__social">
+                    <a href="#" class="social-link" aria-label="Instagram">IG</a>
+                    <a href="#" class="social-link" aria-label="Behance">BH</a>
+                    <a href="mailto:hello@vysotskaya.art" class="social-link" aria-label="Email">✉</a>
+                </div>
+            </div>
+            <p class="footer__copyright">© 2024 Высоцкая Добрава. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="../js/error-monitor.js" defer></script>
+    <script src="../js/analytics.js" defer></script>
+    <script src="../js/analytics-panel.js" defer></script>
+    <script src="../js/mobile-nav.js" defer></script>
+    <script src="../js/modals.js" defer></script>
+    <script src="../js/script.js" defer></script>
+    
+    <!-- Валидация формы -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const commissionForm = document.getElementById('commissionForm');
+            const successMessage = document.getElementById('successMessage');
+            
+            if (commissionForm) {
+                commissionForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    let isValid = true;
+                    
+                    // Валидация имени
+                    const name = document.getElementById('name');
+                    const nameError = document.getElementById('nameError');
+                    if (name.value.trim().length < 2) {
+                        nameError.textContent = 'Введите имя (мин. 2 символа)';
+                        nameError.classList.add('visible');
+                        name.classList.add('input--error');
+                        isValid = false;
+                    } else {
+                        nameError.textContent = '';
+                        nameError.classList.remove('visible');
+                        name.classList.remove('input--error');
+                    }
+                    
+                    // Валидация email
+                    const email = document.getElementById('email');
+                    const emailError = document.getElementById('emailError');
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email.value)) {
+                        emailError.textContent = 'Введите корректный email';
+                        emailError.classList.add('visible');
+                        email.classList.add('input--error');
+                        isValid = false;
+                    } else {
+                        emailError.textContent = '';
+                        emailError.classList.remove('visible');
+                        email.classList.remove('input--error');
+                    }
+                    
+                    // Валидация типа работы
+                    const type = document.getElementById('type');
+                    const typeError = document.getElementById('typeError');
+                    if (!type.value) {
+                        typeError.textContent = 'Выберите тип работы';
+                        typeError.classList.add('visible');
+                        type.classList.add('input--error');
+                        isValid = false;
+                    } else {
+                        typeError.textContent = '';
+                        typeError.classList.remove('visible');
+                        type.classList.remove('input--error');
+                    }
+                    
+                    // Валидация описания
+                    const description = document.getElementById('description');
+                    const descError = document.getElementById('descError');
+                    if (description.value.trim().length < 20) {
+                        descError.textContent = 'Опишите идею подробнее (мин. 20 символов)';
+                        descError.classList.add('visible');
+                        description.classList.add('input--error');
+                        isValid = false;
+                    } else {
+                        descError.textContent = '';
+                        descError.classList.remove('visible');
+                        description.classList.remove('input--error');
+                    }
+                    
+                    // Валидация согласия
+                    const consent = commissionForm.querySelector('[name="consent"]');
+                    const consentError = document.getElementById('consentError');
+                    if (!consent.checked) {
+                        consentError.textContent = 'Необходимо согласие на обработку данных';
+                        consentError.classList.add('visible');
+                        isValid = false;
+                    } else {
+                        consentError.textContent = '';
+                        consentError.classList.remove('visible');
+                    }
+                    
+                    // Если всё валидно
+                    if (isValid) {
+                        commissionForm.style.display = 'none';
+                        successMessage.hidden = false;
+                        successMessage.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+                
+                // Удаление ошибки при вводе
+                commissionForm.querySelectorAll('input, textarea, select').forEach(field => {
+                    field.addEventListener('input', () => {
+                        field.classList.remove('input--error');
+                        const errorEl = document.getElementById(`${field.id}Error`);
+                        if (errorEl) {
+                            errorEl.textContent = '';
+                            errorEl.classList.remove('visible');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио | Высоцкая Добрава</title>
+    <meta name="description" content="Портфолио работ художницы Высоцкой Добравы: живопись маслом и акрилом, графика, индивидуальные заказы.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Портфолио | Высоцкая Добрава">
+    <meta property="og:description" content="Галерея живописных работ">
+    <meta property="og:type" content="website">
+    
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/analytics-panel.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="../index.html" class="logo">
+                <span class="logo__text">Высоцкая Добрава</span>
+            </a>
+            
+            <nav class="nav" id="mainNav">
+                <ul class="nav__list nav__list--desktop">
+                    <li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="portfolio.html" class="nav__link nav__link--active">Портфолио</a></li>
+                    <li class="nav__item"><a href="../index.html#about" class="nav__link">Обо мне</a></li>
+                    <li class="nav__item"><a href="commission.html" class="nav__link">Заказать</a></li>
+                    <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
+                </ul>
+                
+                <button class="nav__burger" id="navBurger" aria-label="Открыть меню" aria-expanded="false">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+                
+                <div class="nav__mobile" id="navMobile" hidden>
+                    <ul class="nav__list nav__list--mobile">
+                        <li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li>
+                        <li class="nav__item"><a href="portfolio.html" class="nav__link">Портфолио</a></li>
+                        <li class="nav__item"><a href="../index.html#about" class="nav__link">Обо мне</a></li>
+                        <li class="nav__item"><a href="commission.html" class="nav__link">Заказать</a></li>
+                        <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="section">
+        <div class="container">
+            <h1 class="section-title">Все работы</h1>
+            
+            <!-- Фильтры -->
+            <div class="works-filter">
+                <button class="filter-btn active" data-filter="all">Все работы</button>
+                <button class="filter-btn" data-filter="живопись">Живопись</button>
+                <button class="filter-btn" data-filter="графика">Графика</button>
+                <button class="filter-btn" data-filter="комиссии">Комиссии</button>
+            </div>
+            
+            <!-- Галерея -->
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Карточки генерируются через JS -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <span class="footer__logo">Высоцкая Добрава</span>
+                    <p class="footer__desc">Художница • Живопись • Комиссии</p>
+                </div>
+                <nav class="footer__nav">
+                    <a href="portfolio.html">Портфолио</a>
+                    <a href="commission.html">Заказать</a>
+                    <a href="contacts.html">Контакты</a>
+                </nav>
+                <div class="footer__social">
+                    <a href="#" class="social-link" aria-label="Instagram">IG</a>
+                    <a href="#" class="social-link" aria-label="Behance">BH</a>
+                    <a href="mailto:hello@vysotskaya.art" class="social-link" aria-label="Email">✉</a>
+                </div>
+            </div>
+            <p class="footer__copyright">© 2024 Высоцкая Добрава. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="../js/error-monitor.js" defer></script>
+    <script src="../js/analytics.js" defer></script>
+    <script src="../js/analytics-panel.js" defer></script>
+    <script src="../js/works-data.js" defer></script>
+    <script src="../js/render-works.js" defer></script>
+    <script src="../js/filter-works.js" defer></script>
+    <script src="../js/mobile-nav.js" defer></script>
+    <script src="../js/modals.js" defer></script>
+    <script src="../js/script.js" defer></script>
+</body>
+</html>

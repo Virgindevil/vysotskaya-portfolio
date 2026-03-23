@@ -1,0 +1,200 @@
+/* ===== Скрытая панель аналитики ===== */
+#analytics-panel {
+    position: fixed;
+    top: 20px;
+    right: -400px;
+    width: 350px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    z-index: 9999;
+    transition: right 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+#analytics-panel.visible {
+    right: 20px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #eee;
+    background: #f8f9fa;
+    border-radius: 12px 12px 0 0;
+    position: sticky;
+    top: 0;
+}
+
+.panel-header h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.panel-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.panel-close:hover {
+    color: #333;
+}
+
+.panel-content {
+    padding: 20px;
+}
+
+.stat-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.stat-card:last-of-type {
+    border-bottom: none;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 13px;
+}
+
+.stat-value {
+    font-weight: 600;
+    color: #C4704D;
+    font-size: 16px;
+}
+
+.top-elements {
+    margin: 20px 0;
+}
+
+.top-elements h4 {
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+}
+
+.top-elements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.top-elements li {
+    padding: 6px 0;
+    font-size: 13px;
+    color: #555;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.top-elements li:last-child {
+    border-bottom: none;
+}
+
+.panel-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.panel-actions button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+#export-btn {
+    background: #C4704D;
+    color: #fff;
+}
+
+#export-btn:hover {
+    background: #A05538;
+}
+
+#clear-btn {
+    background: #f0f0f0;
+    color: #333;
+}
+
+#clear-btn:hover {
+    background: #e0e0e0;
+}
+
+/* Адаптивность панели */
+@media (max-width: 480px) {
+    #analytics-panel {
+        width: 300px;
+        right: -300px;
+    }
+    
+    #analytics-panel.visible {
+        right: 10px;
+    }
+    
+    .panel-header {
+        padding: 12px 16px;
+    }
+    
+    .panel-content {
+        padding: 16px;
+    }
+}
+
+/* Анимация появления */
+@keyframes panelSlide {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#analytics-panel.visible {
+    animation: panelSlide 0.3s ease;
+}
+
+/* Скроллбар для панели */
+#analytics-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+#analytics-panel::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+#analytics-panel::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+#analytics-panel::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}

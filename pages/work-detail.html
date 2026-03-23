@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Утро в саду" | Высоцкая Добрава</title>
+    <meta name="description" content="Картина маслом «Утро в саду» от художницы Высоцкой Добравы. Размер 50×70 см, 2024 год.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="«Утро в саду» | Высоцкая Добрава">
+    <meta property="og:description" content="Оригинальная живописная работа">
+    <meta property="og:type" content="website">
+    
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/analytics-panel.css">
+    
+    <!-- Дополнительные стили для страницы работы -->
+    <style>
+        .work-detail {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .work-detail__inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+        
+        .work-gallery {
+            position: sticky;
+            top: 100px;
+        }
+        
+        .work-gallery__main {
+            margin-bottom: 20px;
+        }
+        
+        .work-gallery__main img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .work-gallery__thumbs {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .work-gallery__thumbs .thumb {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        
+        .work-gallery__thumbs .thumb:hover,
+        .work-gallery__thumbs .thumb.active {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        
+        .work-info {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .work-info__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .work-info__year {
+            color: #7f8c8d;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+        
+        .work-info__specs {
+            margin-bottom: 25px;
+        }
+        
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .spec-value {
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .status-available {
+            color: #27ae60;
+        }
+        
+        .status-sold {
+            color: #e74c3c;
+        }
+        
+        .work-info__price {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .price-label {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .price-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #C4704D;
+            font-weight: 700;
+        }
+        
+        .work-info__actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .work-info__description h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .work-info__description p {
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 1024px) {
+            .work-detail__inner {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .work-gallery {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .work-info {
+                padding: 30px 20px;
+            }
+            
+            .work-info__title {
+                font-size: 28px;
+            }
+            
+            .work-info__actions {
+                flex-direction: column;
+            }
+            
+            .work-info__actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="../index.html" class="logo">
+                <span class="logo__text">← Назад</span>
+            </a>
+            
+            <nav class="nav" id="mainNav">
+                <ul class="nav__list nav__list--desktop">
+                    <li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="portfolio.html" class="nav__link nav__link--active">Портфолио</a></li>
+                    <li class="nav__item"><a href="../index.html#about" class="nav__link">Обо мне</a></li>
+                    <li class="nav__item"><a href="commission.html" class="nav__link">Заказать</a></li>
+                    <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
+                </ul>
+                
+                <button class="nav__burger" id="navBurger" aria-label="Открыть меню" aria-expanded="false">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+                
+                <div class="nav__mobile" id="navMobile" hidden>
+                    <ul class="nav__list nav__list--mobile">
+                        <li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li>
+                        <li class="nav__item"><a href="portfolio.html" class="nav__link">Портфолио</a></li>
+                        <li class="nav__item"><a href="../index.html#about" class="nav__link">Обо мне</a></li>
+                        <li class="nav__item"><a href="commission.html" class="nav__link">Заказать</a></li>
+                        <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="work-detail">
+        <div class="container work-detail__inner">
+            <!-- Галерея изображений -->
+            <div class="work-gallery">
+                <div class="work-gallery__main">
+                    <img src="../img/works/work-1-full.webp" alt="Утро в саду - полная версия" id="mainImage">
+                </div>
+                <div class="work-gallery__thumbs">
+                    <img src="../img/works/work-1.webp" alt="Миниатюра 1" class="thumb active" data-full="../img/works/work-1-full.webp">
+                    <img src="../img/works/work-1-detail.webp" alt="Деталь работы" class="thumb" data-full="../img/works/work-1-detail.webp">
+                </div>
+            </div>
+
+            <!-- Информация о работе -->
+            <div class="work-info">
+                <h1 class="work-info__title">"Утро в саду"</h1>
+                <p class="work-info__year">2024</p>
+                
+                <div class="work-info__specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Материалы:</span>
+                        <span class="spec-value">Масло, холст на подрамнике</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Размер:</span>
+                        <span class="spec-value">50 × 70 см</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Статус:</span>
+                        <span class="spec-value status-available">В наличии</span>
+                    </div>
+                </div>
+
+                <div class="work-info__price">
+                    <span class="price-label">Цена:</span>
+                    <span class="price-value">15 000 ₽</span>
+                </div>
+
+                <div class="work-info__actions">
+                    <button class="btn btn--primary" id="buyBtn">Купить эту работу</button>
+                    <a href="commission.html" class="btn btn--outline">Заказать похожую</a>
+                </div>
+
+                <div class="work-info__description">
+                    <h3>О работе</h3>
+                    <p>
+                        Эта картина создана под впечатлением от раннего утра в загородном саду. 
+                        Игра света и тени, свежесть зелени и ощущение спокойствия — всё это 
+                        я постаралась передать через мягкие мазки и тёплую палитру.
+                    </p>
+                    <p style="margin-top: 15px;">
+                        Работа выполнена маслом на холсте, закреплена лаком. Подходит для 
+                        размещения в гостиной, спальне или рабочем кабинете. Рама не включена 
+                        в стоимость, но может быть подобрана индивидуально.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <span class="footer__logo">Высоцкая Добрава</span>
+                    <p class="footer__desc">Художница • Живопись • Комиссии</p>
+                </div>
+                <nav class="footer__nav">
+                    <a href="portfolio.html">Портфолио</a>
+                    <a href="commission.html">Заказать</a>
+                    <a href="contacts.html">Контакты</a>
+                </nav>
+                <div class="footer__social">
+                    <a href="#" class="social-link" aria-label="Instagram">IG</a>
+                    <a href="#" class="social-link" aria-label="Behance">BH</a>
+                    <a href="mailto:hello@vysotskaya.art" class="social-link" aria-label="Email">✉</a>
+                </div>
+            </div>
+            <p class="footer__copyright">© 2024 Высоцкая Добрава. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="../js/error-monitor.js" defer></script>
+    <script src="../js/analytics.js" defer></script>
+    <script src="../js/analytics-panel.js" defer></script>
+    <script src="../js/mobile-nav.js" defer></script>
+    <script src="../js/modals.js" defer></script>
+    <script src="../js/script.js" defer></script>
+    
+    <!-- Галерея на странице работы -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainImage = document.getElementById('mainImage');
+            const thumbs = document.querySelectorAll('.thumb');
+            
+            if (mainImage && thumbs.length > 0) {
+                thumbs.forEach(thumb => {
+                    thumb.addEventListener('click', () => {
+                        thumbs.forEach(t => t.classList.remove('active'));
+                        thumb.classList.add('active');
+                        mainImage.src = thumb.dataset.full;
+                        mainImage.alt = thumb.alt;
+                    });
+                });
+            }
+            
+            // Кнопка "Купить"
+            const buyBtn = document.getElementById('buyBtn');
+            if (buyBtn) {
+                buyBtn.addEventListener('click', () => {
+                    alert('Спасибо за интерес к работе! Для приобретения свяжитесь со мной через форму "Заказать" или по email.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
